@@ -6,7 +6,7 @@ from asterisk_algorithm import asterisk_algo
 # Constants
 WIDTH = 800
 WIN = pygame.display.set_mode((WIDTH, WIDTH))
-pygame.display.set_caption("A* Search Algorith Visualizer")
+pygame.display.set_caption("A* - Search Algorith Visualizer")
 
 
 # This method makes the grid as 2-dimensional array and filling it with the
@@ -66,7 +66,10 @@ def main(win, width):
             if pygame.mouse.get_pressed()[0]:  # LEFT-mouse-button is pressed
                 pos = pygame.mouse.get_pos()
                 row, col = get_mouse_position(pos, ROWS, width)
-                node = GRID[row][col]
+                try:
+                    node = GRID[row][col]
+                except:
+                    pass
                 if not start and node != end:
                     start = node
                     start.make_start()
@@ -79,7 +82,10 @@ def main(win, width):
             elif pygame.mouse.get_pressed()[2]:  # RIGHT-mouse-button is pressed --> Reset the clicked node/square
                 pos = pygame.mouse.get_pos()
                 row, col = get_mouse_position(pos, ROWS, width)
-                node = GRID[row][col]
+                try:
+                    node = GRID[row][col]
+                except:
+                    pass
                 node.reset_all()
                 if node == start:
                     start = None
