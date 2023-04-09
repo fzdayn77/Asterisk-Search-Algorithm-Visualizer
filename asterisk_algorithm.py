@@ -24,51 +24,49 @@ def construct_path(previous_node, current_node, draw):
 
 # A*-algorithm
 def asterisk_algo(draw, grid, start, end):
-        count = 0
-        open_set = PriorityQueue()
-        open_set.put((0, count, start))
-        came_from = {}
+                count = 0
+                open_set = PriorityQueue()
+                open_set.put((0, count, start))
+                came_from = {}
 
-        # Initializing
-        g_n = {node: float("inf") for row in grid for node in row}
-        g_n[start] = 0
+                g_n = {node: float("inf") for row in grid for node in row}
+                g_n[start] = 0
 
-        # f_n = g_n + manhattan_distance
-        f_n = {node: float("inf") for row in grid for node in row}
-        f_n[start] = manhattan_distance(start.get_pos(), end.get_pos())
+                # f_n = g_n + manhattab_distance(n)
+                f_n = {node: float("inf") for row in grid for node in row}
+                f_n[start] = manhattan_distance(start.get_pos(), end.get_pos())
 
-        open_set_hash = {start}
+                open_set_hash = {start}
 
-        # Running the algorithm after Initialization
-        while not open_set.empty():
-                for event in pygame.event.get():
-                        if event.type == pygame.QUIT:
-                                pygame.quit()
-                        
-                current_node = open_set.get()[2]
-                open_set_hash.remove(current_node)
+                while not open_set.empty():
+                        for event in pygame.event.get():
+                                if event.type == pygame.QUIT:
+                                        pygame.quit()
 
-                if current_node == end:
-                        construct_path(came_from, end, draw)
-                        end.make_end()
-                        return True
-                
-                for neighbor in current_node.neighbors:
-                       temp_g_n = g_n[current_node] + 1
+                        current_node = open_set.get()[2]
+                        open_set_hash.remove(current_node)
 
-                       if temp_g_n < g_n[current_node]:
-                               came_from[neighbor] = current_node
-                               g_n[neighbor] = temp_g_n
-                               f_n[neighbor] = temp_g_n + manhattan_distance(neighbor.get_pos(), end.get_pos())
-                               if neighbor not in open_set_hash:
-                                       count += 1
-                                       open_set.put((f_n[neighbor], count, neighbor))
-                                       open_set_hash.add(neighbor)
-                                       neighbor.make_open()
-                
-                draw()
+                        if current_node == end:
+                                construct_path(came_from, end, draw)
+                                end.make_end()
+                                return True
 
-                if current_node != start:
-                        current_node.make_closed()
+                        for neighbor in current_node.neighbors:
+                                temp_g_n = g_n[current_node] + 1
 
-        return False
+                                if temp_g_n < g_n[neighbor]:
+                                        came_from[neighbor] = current_node
+                                        g_n[neighbor] = temp_g_n
+                                        f_n[neighbor] = temp_g_n + manhattan_distance(neighbor.get_pos(), end.get_pos())
+                                        if neighbor not in open_set_hash:
+                                                count += 1
+                                                open_set.put((f_n[neighbor], count, neighbor))
+                                                open_set_hash.add(neighbor)
+                                                neighbor.make_open()
+
+                        draw()
+
+                        if current_node != start:
+                                current_node.make_closed()
+
+                return False

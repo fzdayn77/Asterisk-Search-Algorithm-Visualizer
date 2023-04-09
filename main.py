@@ -34,8 +34,8 @@ def draw(win, grid, rows, width):
     win.fill(WHITE)
 
     for row in grid:
-        for Node in row:
-            Node.draw_node(win)
+        for node in row:
+            node.draw_node(win)
     
     draw_grid(win, rows, width)
     pygame.display.update()
