@@ -21,7 +21,7 @@ def make_grid(rows, width):
             grid[i].append(node)
     return grid
 
-# THis method draws the grey lines(horizontal and vertical) separating the nodes/squares.
+# This method draws the grey lines(horizontal and vertical) separating the nodes/squares.
 def draw_grid(win, rows, width):
     gap = width // rows
     for i in range(rows):
