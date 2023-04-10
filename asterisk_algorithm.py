@@ -1,5 +1,6 @@
 """
-This ia the A*-algorithm class. 
+This is the A*-algorithm class. It contains the manhattan distance method which
+is used in the asterisk_algo method.
 """
 
 import pygame
