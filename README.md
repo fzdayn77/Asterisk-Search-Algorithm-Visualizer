@@ -14,7 +14,7 @@ A simple desktop app that shows the workflow of the [__A* Search Algorithm__](ht
 
 ![](screenshots/s1.png)
 
-4. Press *SPACE* on your keyboard to start the algorithm
+4. Press *SPACE* on your keyboard to start the algorithm: open nodes are in **green**, closed ones are in **red** and the path after the execution of the algorithm is **yellow**
 
 ![](screenshots/s2.png)
 
