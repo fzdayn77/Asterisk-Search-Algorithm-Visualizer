@@ -10,4 +10,12 @@ A simple desktop app that shows the workflow of the [__A* Search Algorithm__](ht
 
 1. Clone/Download the repository
 2. Execute the main.py file
-3. Use the LEFT-key of your mouse to choose the positions of the **start-point** (orange color), the **end-point** (turquoise color), and the **obstacles** (black color).
+3. Use the *LEFT-key* on your mouse to choose the positions of the **start-point** (orange color), the **end-point** (turquoise color), and the **obstacles** (black color)
+
+![](screenshots/s1.png)
+
+4. Press *SPACE* on your keyboard to start the algorithm
+
+![](screenshots/s2.png)
+
+5. Press *r-key* on your keyboard to reset it to default (a complete white grid)
