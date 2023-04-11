@@ -6,6 +6,8 @@
 
 A simple desktop app that shows the workflow of the [__A* Search Algorithm__](https://theory.stanford.edu/~amitp/GameProgramming/AStarComparison.html), which finds the shortest path between two points (_start_ and _end_).
 
+The A* algorithm uses a **[heuristic function](https://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html) h(n)** which tells A* an **_estimate_** of the minimum cost from any vertex n to the goal.
+
 ## How to use it ?
 
 1. Clone/Download the repository
