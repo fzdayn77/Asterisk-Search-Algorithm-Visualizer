@@ -8,7 +8,7 @@ A simple desktop app that shows the workflow of the [__A* Search Algorithm__](ht
 
 The A* algorithm uses a **[heuristic function](https://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html) h(n)** which tells A* an **_estimate_** of the minimum cost from any vertex n to the goal.
 
-( In this project the **Manhattan distance** will be used )
+( In this project the **Manhattan distance** is used )
 
 ## How to use it ?
 
