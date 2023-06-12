@@ -6,7 +6,7 @@ from asterisk_algorithm import asterisk_algo
 # Constants
 WIDTH = 800
 WIN = pygame.display.set_mode((WIDTH, WIDTH))
-pygame.display.set_caption("A* - Search Algorith Visualizer")
+pygame.display.set_caption("A* - Search Algorithm Visualizer")
 
 
 # This method makes the grid as 2-dimensional array and filling it with the
